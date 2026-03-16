@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AkSaraa</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Basic meta -->
+  <meta name="description" content="A romantic digital memory book — Happy Anniversary" />
+</head>
+<body>
+  <!-- Scroll progress -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Floating hearts canvas (particles) -->
+  <canvas id="hearts-canvas" class="hearts-canvas" aria-hidden="true"></canvas>
+
+  <!-- Header / small top controls -->
+  <header class="topbar">
+    <div class="brand">
+      <svg class="logo" width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M12 21s-7-4.35-9-7.5C1 9.75 5.58 5 8.5 5 10.3 5 12 6.2 12 6.2S13.7 5 15.5 5C18.42 5 23 9.75 21 13.5 19 16.65 12 21 12 21z" fill="currentColor"/>
+      </svg>
+      <span>Our Memory Book</span>
+    </div>
+    <div class="controls">
+      <button id="music-toggle" class="icon-btn" aria-pressed="false" title="Play / Pause Music">
+        <!-- music icon -->
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 17V5l12-2v12" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button id="surprise-btn" class="cta">Click for a Surprise ✨</button>
+    </div>
+  </header>
+
+  <!-- HERO / Welcome -->
+  <main>
+    <section id="hero" class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-content container">
+        <h1 class="title">Heyyy Saraaaaa <span aria-hidden="true">❤️</span></h1>
+        <p class="subtitle">To the one who made my world softer and brighter.</p>
+        <p class="typing"><span id="typing-text" aria-live="polite"></span><span class="cursor">|</span></p>
+        <div class="hero-actions">
+          <a href="#memories" class="btn">View Memories</a>
+          <a href="#timeline" class="btn ghost">Our Story</a>
+        </div>
+      </div>
+
+      <!-- floating hearts (decorative) -->
+      <div id="floating-hearts" class="floating-hearts" aria-hidden="true"></div>
+    </section>
+
+    <!-- PHOTO CAROUSEL -->
+    <section id="memories" class="carousel-section">
+      <div class="container section-header">
+        <h2>Our Gallery</h2>
+        <p class="muted">Some of our best moments...</p>
+      </div>
+
+      <div class="carousel-wrap container">
+        <div class="carousel" id="carousel" tabindex="0">
+          <button class="carousel-btn prev" id="carousel-prev" aria-label="Previous photo">‹</button>
+          <div class="carousel-track" id="carousel-track">
+            <!-- slides: replace src / data-src with your images -->
+            <div class="slide">
+              <img src="./res/img1.jpeg" alt="Memory 1" class="lazy" />
+              <div class="caption">Coimbatore..</div>
+            </div>
+            <div class="slide">
+              <img src="./res/img2.jpeg" alt="Memory 2" class="lazy" />
+              <div class="caption">Bhubaneswar..</div>
+            </div>
+            <div class="slide">
+              <img src="./res/img3.jpeg" alt="Memory 3" class="lazy" />
+              <div class="caption">Puri..</div>
+            </div>
+            <div class="slide">
+              <img src="./res/img4.jpeg" alt="Memory 4" class="lazy" />
+              <div class="caption">Pollachi..</div>
+            </div>
+          </div>
+          <button class="carousel-btn next" id="carousel-next" aria-label="Next photo">›</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEMORY TIMELINE -->
+    <section id="timeline" class="timeline-section container">
+      <div class="section-header">
+        <h2>Our Timeline</h2>
+        <p class="muted">Moments that i will cherishh for lyf..</p>
+      </div>
+
+      <div class="timeline">
+        <!-- timeline items: replace with your content -->
+        <article class="timeline-item">
+          <div class="time-photo">
+            <img src="./res/img8.jpeg" alt="First meet" class="lazy" />
+            <!-- <span class="date">June 15, 2020</span> -->
+          </div>
+          <div class="time-content">
+            <h3>First Meet  Outside Campus</h3>
+            <p>We met at that interview..</p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="time-photo">
+            <img src="./res/img5.jpeg" alt="Trip" class="lazy" />
+            <!-- <span class="date">Dec 10, 2021</span> -->
+          </div>
+          <div class="time-content">
+            <h3>Onr Day Meets..</h3>
+            <p>Those one day meets, by lying to family..</p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="time-photo">
+            <img src="./res/img7.jpeg" alt="Party" class="lazy" />
+            <!-- <span class="date">March 8, 2022</span> -->
+          </div>
+          <div class="time-content">
+            <h3>First Pic</h3>
+            <p>Our first pic Together in JNV..</p>
+          </div>
+        </article>
+  <article class="timeline-item">
+          <div class="time-photo">
+            <img src="./res/img9.jpeg" alt="Party" class="lazy" />
+            <!-- <span class="date">March 8, 2022</span> -->
+          </div>
+          <div class="time-content">
+            <h3>Bed Time</h3>
+            <p>Those lazy mrng wake ups...</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- MEMORY CARDS GRID -->
+    <section id="grid" class="cards-section">
+      <div class="container section-header">
+        <h2>Memory Cards</h2>
+        <p class="muted">A little gallery of moments</p>
+      </div>
+
+      <div class="container cards-grid">
+        <!-- cards: click to open lightbox -->
+        <div class="memory-card" tabindex="0">
+          <div class="card-inner">
+            <figure class="card-media">
+              <img src="./res/img10.jpeg" alt="Card 1" class="lazy" />
+            </figure>
+            <div class="card-body">
+              <h3>Our First Resort</h3>
+              <p>Calm Place...Best company..</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="memory-card" tabindex="0">
+          <div class="card-inner">
+            <figure class="card-media">
+              <img src="./res/img11.jpeg" alt="Card 2" class="lazy" />
+            </figure>
+            <div class="card-body">
+              <h3>First Stay</h3>
+              <p>Our First stay Together...</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="memory-card" tabindex="0">
+          <div class="card-inner">
+            <figure class="card-media">
+              <img src="./res/img3.jpeg" alt="Card 3" class="lazy" />
+            </figure>
+            <div class="card-body">
+              <h3>Cozy Nights</h3>
+              <p>You ate prawn there ha ha!!</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="memory-card" tabindex="0">
+          <div class="card-inner">
+            <figure class="card-media">
+              <img src="./res/img6.jpeg" alt="Card 4" class="lazy" />
+            </figure>
+            <div class="card-body">
+              <h3>JNV Pics</h3>
+              <p>Nandi took our picture..</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOVE MESSAGE -->
+    <section id="message" class="message-section">
+      <div class="container">
+        <h2>Love Message</h2>
+        <div class="message-box glass">
+          <p id="love-text" class="love-text">
+            My love, each day with you is a page of a beautiful story I never want to end. Thank you for being my home, my laughter, and my everything.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COUNTERS -->
+    <section id="counters" class="counters-section container">
+      <div class="section-header">
+        <h2>Special Moments</h2>
+        <p class="muted">Numbers that mean the world</p>
+      </div>
+
+      <div class="counters-grid">
+        <div class="counter">
+          <div class="num" data-target="" id="days-count">0</div>
+          <div class="label">Days Together</div>
+        </div>
+        <div class="counter">
+          <div class="num" data-target="" id="months-count">0</div>
+          <div class="label">Months Together</div>
+        </div>
+        <div class="counter">
+          <div class="num" data-target="" id="memories-count">0</div>
+          <div class="label">Memories</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox (hidden initially) -->
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+      <button id="lightbox-close" class="lightbox-close" aria-label="Close">✕</button>
+      <button id="lightbox-prev" class="lightbox-nav prev" aria-label="Previous">‹</button>
+      <div class="lightbox-content">
+        <img src="" alt="" id="lightbox-img" />
+        <div id="lightbox-caption" class="lightbox-caption"></div>
+      </div>
+      <button id="lightbox-next" class="lightbox-nav next" aria-label="Next">›</button>
+    </div>
+
+    <!-- Music player (audio element) -->
+    <audio id="bg-music" loop preload="none">
+      <!-- play -->
+      <!-- Placeholder: replace with your music file -->
+      <source src="./res/song.mp3" type="audio/mpeg" />
+      Your browser does not support audio.
+    </audio>
+
+    <!-- Surprise popup (hidden) -->
+    <div id="surprise-modal" class="modal" aria-hidden="true">
+      <div class="modal-inner glass">
+        <button class="modal-close" id="surprise-close" aria-label="Close">✕</button>
+        <h2>Surprise!</h2>
+        <p class="romantic">You are my today and all of my tomorrows. Forever with you ❤️</p>
+      </div>
+    </div>
+
+    <!-- Final Love Section -->
+    <section id="final" class="final-section">
+      <div class="container final-content">
+        <h2>Forever with you <span class="glow-heart">❤️</span></h2>
+        <p class="muted">Thank you for being my favorite story.</p>
+      </div>
+    </section>
+
+    <footer class="site-footer container">
+      <small>Made with ❤️ by Bicky..</small>
+    </footer>
+  </main>
+
+  <!-- Scripts -->
+  <script src="script.js" defer></script>
+</body>
+</html>
